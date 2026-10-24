@@ -69,7 +69,7 @@ export async function saveAddress(
 
 /** Aggiorna i consensi privacy/marketing. Il servizio ordini resta sempre attivo. */
 export async function updatePreferences(input: {
-  weeklyPromotions: boolean;
+  promotions: boolean;
   personalizedOffers: boolean;
 }): Promise<ActionResult<CustomerPreferences>> {
   try {

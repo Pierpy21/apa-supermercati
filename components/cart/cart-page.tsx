@@ -219,7 +219,7 @@ function EmptyCart() {
         Il carrello è vuoto
       </h2>
       <p className="text-ink-soft">
-        Aggiungi i prodotti che ti servono: li trovi nei reparti e nelle offerte della settimana.
+        Aggiungi i prodotti che ti servono: li trovi nei reparti e nelle offerte.
       </p>
       <div className="mt-2 flex flex-wrap justify-center gap-3">
         <Link
@@ -229,7 +229,7 @@ function EmptyCart() {
           Vai alla spesa
         </Link>
         <Link
-          href="/offerte?tipo=volantino"
+          href="/offerte"
           className="flex h-11 items-center justify-center rounded-lg border border-line-strong px-5 font-semibold text-ink transition-colors hover:bg-brand-tint"
         >
           Vedi le offerte

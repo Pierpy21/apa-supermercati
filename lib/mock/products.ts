@@ -29,8 +29,6 @@ export const products: Product[] = [
     format: "Bottiglia 1 L",
     unitPrice: "€ 1,49 / L",
     price: 1.49,
-    listPrice: 1.79,
-    deal: "weekly",
     image: "/img/prodotti/latte-intero-apa.svg",
     description: "Latte fresco pastorizzato da stalle siciliane selezionate.",
     tags: ["latte", "colazione"],
@@ -60,8 +58,6 @@ export const products: Product[] = [
     format: "Vasetto 500 g",
     unitPrice: "€ 4,90 / kg",
     price: 2.45,
-    listPrice: 2.99,
-    deal: "weekly",
     image: "/img/prodotti/yogurt-greco-500g.svg",
     description: "Yogurt colato denso e cremoso, senza grassi.",
     tags: ["yogurt", "colazione", "proteico"],
@@ -143,8 +139,6 @@ export const products: Product[] = [
     format: "Rete 2 kg",
     unitPrice: "€ 1,45 / kg",
     price: 2.9,
-    listPrice: 3.4,
-    deal: "weekly",
     tags: ["arance", "frutta", "sicilia"],
   }),
   product({
@@ -191,8 +185,6 @@ export const products: Product[] = [
     format: "Vaschetta 500 g",
     unitPrice: "€ 11,80 / kg",
     price: 5.9,
-    listPrice: 6.9,
-    deal: "weekly",
     tags: ["pollo", "carne"],
   }),
   product({
@@ -279,8 +271,6 @@ export const products: Product[] = [
     format: "Pacco 500 g",
     unitPrice: "€ 1,78 / kg",
     price: 0.89,
-    listPrice: 1.15,
-    deal: "weekly",
     tags: ["pasta", "spaghetti"],
   }),
   product({
@@ -352,8 +342,6 @@ export const products: Product[] = [
     format: "Bottiglia 1 L",
     unitPrice: "€ 2,79 / L",
     price: 2.79,
-    listPrice: 3.29,
-    deal: "weekly",
     tags: ["succo", "arancia", "colazione"],
   }),
 ];

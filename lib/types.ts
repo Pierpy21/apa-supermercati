@@ -29,8 +29,8 @@ export interface Category {
   subcategories: Subcategory[];
 }
 
-/** weekly = volantino settimanale, personal = offerta personalizzata sullo storico */
-export type DealType = "weekly" | "personal";
+/** personal = offerta personalizzata sullo storico. Nuovi tipi di offerta si aggiungono qui. */
+export type DealType = "personal";
 
 export interface Product {
   id: string;
@@ -122,7 +122,7 @@ export interface PaymentMethod {
 export interface CustomerPreferences {
   /** Sempre attive: aggiornamenti di servizio sull'ordine */
   serviceUpdates: true;
-  weeklyPromotions: boolean;
+  promotions: boolean;
   personalizedOffers: boolean;
 }
 

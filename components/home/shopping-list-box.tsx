@@ -5,6 +5,7 @@ import { getReorderLines } from "@/app/actions/orders";
 import { buildCartFromList } from "@/app/actions/shopping-list";
 import { useCart } from "@/components/cart/cart-provider";
 import { useToast } from "@/components/ui/toast-provider";
+import { PlusBadge } from "@/components/ui/plus-badge";
 
 const PLACEHOLDER = "2 latte\nuova\nyogurt greco\narance";
 
@@ -53,8 +54,9 @@ export function ShoppingListBox() {
       aria-labelledby={`${textareaId}-title`}
       className="rounded-xl border border-line bg-surface p-4 sm:p-5"
     >
-      <h2 id={`${textareaId}-title`} className="font-display text-xl font-bold text-ink">
+      <h2 id={`${textareaId}-title`} className="flex items-center gap-2.5 font-display text-xl font-bold text-ink">
         Lista della spesa
+        <PlusBadge />
       </h2>
       <form onSubmit={handleSubmit} className="mt-3 space-y-3">
         <label htmlFor={textareaId} className="block text-sm text-ink-soft">

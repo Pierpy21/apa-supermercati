@@ -55,7 +55,7 @@ async function SearchResults({ searchParams }: { searchParams: Promise<SearchPar
         <div className="mt-6 rounded-xl border border-dashed border-line-strong bg-surface px-6 py-10">
           <p className="font-display text-xl font-bold text-ink">Nessun prodotto corrisponde alla ricerca</p>
           <p className="mt-2 text-sm text-ink-soft">
-            Prova con un termine più generico oppure guarda le offerte della settimana.
+            Prova con un termine più generico oppure guarda le offerte.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link

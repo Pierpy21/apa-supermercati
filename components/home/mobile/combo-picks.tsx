@@ -8,7 +8,6 @@ import { AddBundleButton } from "./add-bundle-button";
 interface ComboPicksProps {
   bundle: Bundle;
   products: Product[];
-  weeklyDeals: Product[];
   personalDeals: Product[];
   freshCategory: Category;
 }
@@ -33,7 +32,7 @@ function DealTile({ title, href, product }: DealTileProps) {
     >
       <span className="font-display text-sm font-semibold text-ink">{title}</span>
       <span className="my-2 flex flex-1 items-center justify-center">
-        <Image src={product.image} alt="" width={120} height={120} unoptimized className="h-auto w-16" />
+        <Image src={product.image} alt="" width={120} height={120} unoptimized className="h-auto w-16 md:w-24" />
       </span>
       <span className="flex items-baseline gap-1.5">
         <span className="font-display text-base font-bold text-ink">{formatEur(product.price)}</span>
@@ -44,8 +43,8 @@ function DealTile({ title, href, product }: DealTileProps) {
   );
 }
 
-/** Riquadri a griglia della home mobile: kit pronto, offerte e freschi del giorno */
-export function ComboPicks({ bundle, products, weeklyDeals, personalDeals, freshCategory }: ComboPicksProps) {
+/** Riquadri a griglia della home: kit pronto, offerte e freschi del giorno */
+export function ComboPicks({ bundle, products, personalDeals, freshCategory }: ComboPicksProps) {
   const byId = new Map(products.map((p) => [p.id, p]));
   const items = bundle.items.flatMap((item) => {
     const product = byId.get(item.productId);
@@ -53,13 +52,13 @@ export function ComboPicks({ bundle, products, weeklyDeals, personalDeals, fresh
   });
   const bundleTotal = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
 
-  const weekly = bestDeal(weeklyDeals);
   const personal = bestDeal(personalDeals);
+  const fromBakery = products.find((p) => p.category === "pane-pasticceria" && p.inStock && !p.deal);
   const freshProducts = products.filter((p) => p.category === freshCategory.slug);
   const freshFrom = Math.min(...freshProducts.map((p) => p.price));
 
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-2 gap-3 md:grid-cols-[1.3fr_1fr_1fr] md:gap-4">
       <article className="row-span-2 flex flex-col gap-2.5 rounded-2xl bg-brand p-3 text-white">
         <div className="px-1 pt-1">
           <h3 className="font-display text-base font-semibold">{bundle.name}</h3>
@@ -85,12 +84,12 @@ export function ComboPicks({ bundle, products, weeklyDeals, personalDeals, fresh
         />
       </article>
 
-      {weekly ? <DealTile title="Volantino" href="/offerte?tipo=volantino" product={weekly} /> : null}
-      {personal ? <DealTile title="Per te" href="/offerte?tipo=per-te" product={personal} /> : null}
+      {personal ? <DealTile title="Per te" href="/offerte" product={personal} /> : null}
+      {fromBakery ? <DealTile title="Dal forno" href="/reparti/pane-pasticceria" product={fromBakery} /> : null}
 
       <Link
         href={`/reparti/${freshCategory.slug}`}
-        className="relative col-span-2 flex min-h-32 overflow-hidden rounded-2xl bg-surface p-4 ring-1 ring-line transition-shadow hover:shadow-sm"
+        className="relative col-span-2 flex min-h-32 md:min-h-40 overflow-hidden rounded-2xl bg-surface p-4 ring-1 ring-line transition-shadow hover:shadow-sm"
       >
         {/* Forma decorativa a tinta piatta dietro l'illustrazione */}
         <span
@@ -114,7 +113,7 @@ export function ComboPicks({ bundle, products, weeklyDeals, personalDeals, fresh
           width={180}
           height={140}
           unoptimized
-          className="category-art relative z-10 ml-auto h-auto w-32 shrink-0 self-end"
+          className="category-art relative z-10 ml-auto h-auto w-32 shrink-0 self-end md:w-44"
         />
       </Link>
     </div>

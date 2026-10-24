@@ -59,11 +59,18 @@ function Milestone({ at, reached, label, align }: MilestoneProps) {
   );
 }
 
-export function CartBar() {
+/** true quando la barra carrello è visibile: serve agli elementi fissi che devono stare sopra di lei */
+export function useCartBarVisible(): boolean {
   const pathname = usePathname();
-  const { totals, hydrated, openDrawer } = useCart();
+  const { totals, hydrated } = useCart();
+  return hydrated && totals.itemCount > 0 && !HIDDEN_ON.includes(pathname);
+}
 
-  if (!hydrated || totals.itemCount === 0 || HIDDEN_ON.includes(pathname)) return null;
+export function CartBar() {
+  const { totals, openDrawer } = useCart();
+  const visible = useCartBarVisible();
+
+  if (!visible) return null;
 
   const progress = Math.min(100, (totals.subtotal / FREE_DELIVERY_EUR) * 100);
   const minimumMark = (MIN_ORDER_EUR / FREE_DELIVERY_EUR) * 100;

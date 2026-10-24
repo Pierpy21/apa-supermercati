@@ -34,11 +34,6 @@ export function ProductCard({ product }: ProductCardProps) {
           />
         </Link>
 
-        {product.deal === "weekly" && (
-          <span className="absolute left-2 top-2 z-10 rounded bg-promo px-2 py-0.5 text-xs font-semibold text-white">
-            Volantino
-          </span>
-        )}
         {product.deal === "personal" && (
           <span className="absolute left-2 top-2 z-10 rounded bg-brand-tint px-2 py-0.5 text-xs font-semibold text-brand">
             Per te

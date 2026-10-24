@@ -179,12 +179,12 @@ export async function saveAddress(input: AddressInput): Promise<Address> {
 }
 
 export async function savePreferences(
-  prefs: Pick<CustomerPreferences, "weeklyPromotions" | "personalizedOffers">,
+  prefs: Pick<CustomerPreferences, "promotions" | "personalizedOffers">,
 ): Promise<CustomerPreferences> {
   const store = getStore();
   store.customer.preferences = {
     serviceUpdates: true,
-    weeklyPromotions: prefs.weeklyPromotions,
+    promotions: prefs.promotions,
     personalizedOffers: prefs.personalizedOffers,
   };
   return { ...store.customer.preferences };

@@ -12,7 +12,7 @@ tutti i dati vengono da `lib/mock/*` attraverso il data layer `lib/data/*` (serv
 | `/reparti/[slug]` | Reparto: intestazione con illustrazione, filtro sottocategorie via `?sub=`, griglia prodotti |
 | `/prodotti/[id]` | Scheda prodotto: immagine, prezzo, formato, prezzo al kg/L, quantità, preferiti, prodotti correlati |
 | `/cerca?q=` | Risultati ricerca |
-| `/offerte?tipo=volantino\|per-te` | Offerte della settimana (volantino) e offerte personalizzate |
+| `/offerte` | Offerte (oggi solo quelle personalizzate "Per te"; nuovi tipi si aggiungono in `DealType`) |
 | `/preferiti` | Prodotti salvati (stato client) |
 | `/carrello` | Carrello completo con riepilogo e soglie (minimo d'ordine, consegna gratuita) |
 | `/checkout` | Indirizzo + copertura CAP, fascia di consegna, sostituzioni, pagamento, conferma |

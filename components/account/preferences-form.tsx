@@ -12,7 +12,7 @@ export interface PreferencesFormProps {
 export function PreferencesForm({ preferences }: PreferencesFormProps) {
   const { notify } = useToast();
   const [isPending, startTransition] = useTransition();
-  const [weeklyPromotions, setWeeklyPromotions] = useState(preferences.weeklyPromotions);
+  const [promotions, setPromotions] = useState(preferences.promotions);
   const [personalizedOffers, setPersonalizedOffers] = useState(preferences.personalizedOffers);
   const baseId = useId();
 
@@ -20,7 +20,7 @@ export function PreferencesForm({ preferences }: PreferencesFormProps) {
     event.preventDefault();
     startTransition(async () => {
       try {
-        const result = await updatePreferences({ weeklyPromotions, personalizedOffers });
+        const result = await updatePreferences({ promotions, personalizedOffers });
         notify(result.success ? "Preferenze salvate" : result.error);
       } catch {
         notify("Non siamo riusciti a salvare le preferenze. Riprova.");
@@ -44,10 +44,10 @@ export function PreferencesForm({ preferences }: PreferencesFormProps) {
 
         <SwitchRow
           id={`${baseId}-promotions`}
-          title="Offerte del volantino settimanale"
-          description="Ricevi ogni settimana le offerte del volantino APA."
-          checked={weeklyPromotions}
-          onChange={setWeeklyPromotions}
+          title="Offerte e promozioni"
+          description="Ricevi le nuove offerte e promozioni di APA Supermercati."
+          checked={promotions}
+          onChange={setPromotions}
         />
 
         <SwitchRow

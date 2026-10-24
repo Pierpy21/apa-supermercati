@@ -54,7 +54,7 @@ export const addressSchema = z.object({
 });
 
 export const preferencesSchema = z.object({
-  weeklyPromotions: z.boolean({ error: "Valore non valido." }),
+  promotions: z.boolean({ error: "Valore non valido." }),
   personalizedOffers: z.boolean({ error: "Valore non valido." }),
 });
 
@@ -70,7 +70,7 @@ export const productsQuerySchema = z.object({
   q: z.string().trim().max(100, "La ricerca non può superare 100 caratteri.").optional(),
   category: z.enum(CATEGORY_SLUGS, { error: "Reparto non valido." }).optional(),
   sub: z.string().trim().min(1).max(60, "Sottocategoria non valida.").optional(),
-  deal: z.enum(["weekly", "personal", "any"], { error: "Tipo di offerta non valido." }).optional(),
+  deal: z.enum(["personal", "any"], { error: "Tipo di offerta non valido." }).optional(),
 });
 
 export type CartLineInput = z.infer<typeof cartLineSchema>;

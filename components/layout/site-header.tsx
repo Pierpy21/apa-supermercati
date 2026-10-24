@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CartButton } from "@/components/cart/cart-drawer";
 import { AddressPopover } from "@/components/layout/address-popover";
+import { Logo } from "@/components/layout/logo";
 import { SearchBar } from "@/components/layout/search-bar";
 import { getCategories } from "@/lib/data/catalog";
 import type { Customer } from "@/lib/types";
@@ -23,9 +24,8 @@ export async function SiteHeader({ customer }: SiteHeaderProps) {
     <header className="sticky top-0 z-30 border-b border-line bg-surface">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-3 py-3 md:gap-x-3">
-          <Link href="/" className="flex h-10 shrink-0 items-center gap-1.5">
-            <span className="font-display text-2xl leading-none font-extrabold text-brand">APA</span>
-            <span className="hidden text-sm font-medium text-ink-soft sm:inline">Supermercati</span>
+          <Link href="/" aria-label="APA Fresh Supermercati, home" className="flex h-10 shrink-0 items-center">
+            <Logo />
           </Link>
 
           {defaultAddress ? <AddressPopover address={defaultAddress} /> : null}
@@ -80,7 +80,7 @@ export async function SiteHeader({ customer }: SiteHeaderProps) {
         <ul className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-4 py-1.5 [scrollbar-width:none] lg:px-8 [&::-webkit-scrollbar]:hidden">
           <li className="shrink-0">
             <Link
-              href="/offerte?tipo=volantino"
+              href="/offerte"
               className="block rounded-full bg-tag px-3 py-1.5 text-sm font-semibold whitespace-nowrap text-ink hover:bg-tag/80"
             >
               Offerte

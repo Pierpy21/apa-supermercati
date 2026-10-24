@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { CartCircleButton } from "@/components/home/mobile/cart-circle-button";
 import { CategoryCircles } from "@/components/home/mobile/category-circles";
 import { MobileSearch } from "@/components/home/mobile/mobile-search";
+import { Logo } from "@/components/layout/logo";
 import type { Category } from "@/lib/types";
 
 // Pagine di catalogo: sotto la barra mostrano anche la ricerca
@@ -53,9 +54,8 @@ export function MobileTopBar({ categories }: { categories: Category[] }) {
               <path d="M15 5l-7 7 7 7" />
             </svg>
           </button>
-          <Link href="/" className="flex min-w-0 flex-1 items-baseline justify-center gap-1.5">
-            <span className="font-display text-2xl leading-none font-extrabold text-brand">APA</span>
-            <span className="text-sm font-medium text-ink-soft">Supermercati</span>
+          <Link href="/" aria-label="APA Fresh Supermercati, home" className="flex min-w-0 flex-1 justify-center">
+            <Logo size="sm" />
           </Link>
           <CartCircleButton />
         </div>

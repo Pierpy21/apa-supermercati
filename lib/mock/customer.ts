@@ -36,7 +36,7 @@ export const customer: Customer = {
   paymentMethods,
   preferences: {
     serviceUpdates: true,
-    weeklyPromotions: true,
+    promotions: true,
     personalizedOffers: true,
   },
   favoriteProductIds: ["latte-intero-apa", "uova-bio-6pz", "uova-contadino-10pz"],

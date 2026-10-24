@@ -4,6 +4,7 @@ import { CartDrawer } from "@/components/cart/cart-drawer";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { DeliveryStrip, DeliveryStripFallback } from "@/components/layout/delivery-strip";
 import { MobileTopBar } from "@/components/layout/mobile-top-bar";
+import { RecipeAssistant } from "@/components/recipes/recipe-assistant";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ToastProvider } from "@/components/ui/toast-provider";
@@ -59,6 +60,7 @@ async function ShopShell({ children }: { children: React.ReactNode }) {
         <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 lg:px-8">{children}</main>
         <SiteFooter />
         <CartBar />
+        <RecipeAssistant />
         <CartDrawer />
       </CartProvider>
     </ToastProvider>

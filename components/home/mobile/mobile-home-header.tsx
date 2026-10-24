@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getCustomer, getDeliverySlots } from "@/lib/data/customer";
+import { Logo } from "@/components/layout/logo";
 import { CartCircleButton } from "./cart-circle-button";
 
 /** Saluto in base all'ora di Catania */
-function greeting(): string {
+export function greeting(): string {
   const hour = Number(
     new Intl.DateTimeFormat("it-IT", { hour: "numeric", hour12: false, timeZone: "Europe/Rome" }).format(new Date()),
   );
@@ -42,18 +43,20 @@ export async function MobileHomeHeader() {
         >
           {initials}
         </Link>
-        <div className="min-w-0 flex-1 leading-tight">
-          <p className="text-sm text-ink-soft">{greeting()}</p>
-          <p className="truncate font-display text-lg font-semibold text-ink">
-            {customer.firstName} {customer.lastName}
-          </p>
-        </div>
+        {/* Stessa riga delle pagine interne: logo al centro tra account e carrello */}
+        <Link href="/" aria-label="APA Fresh Supermercati, home" className="flex min-w-0 flex-1 justify-center">
+          <Logo size="sm" />
+        </Link>
         <CartCircleButton />
       </div>
 
-      <div className="flex items-center gap-2">
-        <div className="min-w-0 flex-1 space-y-2.5">
-          <h1 className="font-display text-[28px] leading-[1.15] font-bold text-ink">La tua spesa fresca, a casa</h1>
+      <h1 className="font-display text-[34px] leading-[1.08] font-bold text-ink">
+        {greeting()}, {customer.firstName}
+      </h1>
+
+      <div className="-mt-2 flex items-center gap-2">
+        <div className="min-w-0 flex-1 space-y-2">
+          <p className="font-display text-xl leading-snug font-semibold text-brand">La tua spesa fresca, a casa</p>
           <p className="text-sm leading-relaxed text-ink-soft">
             {nextSlot
               ? `Prima consegna disponibile: ${nextSlot.dayLabel.toLowerCase()}, ${nextSlot.start}–${nextSlot.end}.`
