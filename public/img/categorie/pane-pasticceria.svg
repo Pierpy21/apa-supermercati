@@ -1,0 +1,15 @@
+<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="95" cy="120" rx="58" ry="12" fill="#0f291e" opacity="0.1"/>
+              <!-- Golden Baguette / Filone -->
+              <g transform="translate(20, 26) rotate(-14)">
+                <rect x="8" y="28" width="96" height="36" rx="18" fill="#d97706" stroke="#0f291e" stroke-width="3.2"/>
+                <path d="M28 32 Q34 44 26 54" stroke="#fef3c7" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+                <path d="M52 32 Q58 44 50 54" stroke="#fef3c7" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+                <path d="M76 32 Q82 44 74 54" stroke="#fef3c7" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+              </g>
+              <!-- Flaky Croissant -->
+              <g transform="translate(68, 62)">
+                <path d="M10 36 C2 20 20 4 42 6 C64 8 80 24 70 40 C64 48 52 42 54 32 C44 24 32 24 24 32 C24 42 14 44 10 36 Z" fill="#f59e0b" stroke="#0f291e" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M26 14 Q42 22 56 15" stroke="#fde68a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+              </g>
+            </svg>

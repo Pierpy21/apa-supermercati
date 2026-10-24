@@ -1,0 +1,23 @@
+<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="98" cy="120" rx="58" ry="12" fill="#0f291e" opacity="0.1"/>
+              <!-- Broccoli Bushy Crown -->
+              <g transform="translate(82, 24)">
+                <path d="M24 52 L20 82 H38 L34 52 Z" fill="#86efac" stroke="#0f291e" stroke-width="3"/>
+                <circle cx="18" cy="38" r="16" fill="#16a34a" stroke="#0f291e" stroke-width="3"/>
+                <circle cx="38" cy="34" r="18" fill="#15803d" stroke="#0f291e" stroke-width="3"/>
+                <circle cx="28" cy="22" r="15" fill="#22c55e" stroke="#0f291e" stroke-width="3"/>
+              </g>
+              <!-- Shiny Red Apple -->
+              <g transform="translate(26, 46)">
+                <path d="M32 16 C18 6 4 20 8 42 C11 58 24 68 32 64 C40 68 53 58 56 42 C60 20 46 6 32 16 Z" fill="#ef4444" stroke="#0f291e" stroke-width="3"/>
+                <path d="M32 16 Q34 4 40 2" stroke="#78350f" stroke-width="3.2" stroke-linecap="round"/>
+                <path d="M35 8 Q48 2 50 12 Q39 16 35 8 Z" fill="#22c55e" stroke="#0f291e" stroke-width="2.5"/>
+                <path d="M16 26 Q13 36 17 46" stroke="#fecaca" stroke-width="3" stroke-linecap="round" fill="none"/>
+              </g>
+              <!-- Orange Carrot with stripes -->
+              <g transform="translate(65, 68) rotate(-22)">
+                <path d="M0 18 Q38 8 74 22 Q38 36 0 18 Z" fill="#f97316" stroke="#0f291e" stroke-width="3" stroke-linejoin="round"/>
+                <line x1="25" y1="15" x2="23" y2="23" stroke="#7c2d12" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="42" y1="16" x2="40" y2="25" stroke="#7c2d12" stroke-width="2.5" stroke-linecap="round"/>
+              </g>
+            </svg>

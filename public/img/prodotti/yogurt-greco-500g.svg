@@ -1,0 +1,7 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="48" fill="#e0f2fe"/>
+            <path d="M26 36 H94 L86 96 C85 101 80 104 75 104 H45 C40 104 35 101 34 96 Z" fill="#ffffff" stroke="#0f291e" stroke-width="3"/>
+            <rect x="20" y="28" width="80" height="10" rx="4" fill="#0284c7" stroke="#0f291e" stroke-width="2.8"/>
+            <path d="M32 56 H88 V80 H32 Z" fill="#bae6fd" stroke="#0f291e" stroke-width="2"/>
+            <text x="60" y="72" text-anchor="middle" fill="#0f291e" font-family="Montserrat, sans-serif" font-weight="900" font-size="10">GRECO 0%</text>
+          </svg>

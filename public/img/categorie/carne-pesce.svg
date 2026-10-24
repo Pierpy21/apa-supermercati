@@ -1,0 +1,14 @@
+<svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="95" cy="120" rx="58" ry="12" fill="#0f291e" opacity="0.1"/>
+              <!-- Marbled Comic Steak -->
+              <g transform="translate(22, 36)">
+                <path d="M18 28 C6 14 28 2 56 8 C84 14 98 34 86 54 C74 72 38 72 20 56 C10 48 24 38 18 28 Z" fill="#be123c" stroke="#0f291e" stroke-width="3.2"/>
+                <path d="M22 24 C14 14 32 6 54 12 C78 18 90 34 80 50 C70 64 40 64 24 50 Z" fill="#f43f5e" stroke="#fff1f2" stroke-width="3"/>
+                <!-- White bone & marbling -->
+                <circle cx="46" cy="34" r="9" fill="#ffffff" stroke="#0f291e" stroke-width="2.8"/>
+                <circle cx="46" cy="34" r="3.5" fill="#fda4af"/>
+                <path d="M62 24 Q70 32 64 44" stroke="#ffe4e6" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+              </g>
+              <!-- Rosemary Sprig -->
+              <path d="M40 96 L95 76" stroke="#15803d" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
