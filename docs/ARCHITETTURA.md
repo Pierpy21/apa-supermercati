@@ -85,6 +85,6 @@ Obiettivo: sembrare il sito di una vera catena di supermercati siciliana, **non*
 
 - `public/img/prodotti/foto-<id>.webp` (600×600, fondo bianco) è la foto principale; `foto-<id>-<n>.webp` sono le
   foto aggiuntive (`Product.gallery`: valori nutrizionali, ingredienti, retro) mostrate nella galleria della scheda.
-- Provenienza, **solo per la demo**: packshot del catalogo MD su Everli e una foto fornita dal cliente (latte Parmalat);
+- Provenienza, **solo per la demo**: packshot da un catalogo online della GDO e una foto fornita dal cliente (latte Parmalat);
   Zymil, burro Brazzale e salmone da Open Food Facts (CC BY-SA 3.0, crediti nel footer). Prima di andare online vanno
   sostituite con foto di cui APA ha i diritti (fornitori o shooting interno).

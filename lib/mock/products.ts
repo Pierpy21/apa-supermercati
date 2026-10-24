@@ -37,7 +37,7 @@ export const products: Product[] = [
   product({
     id: "uova-bio-6pz",
     name: "Uova fresche biologiche",
-    brand: "MD",
+    brand: "APA",
     category: "latte-uova-yogurt",
     subcategory: "uova",
     format: "Confezione 4 uova",
@@ -101,7 +101,7 @@ export const products: Product[] = [
   product({
     id: "uova-contadino-10pz",
     name: "Uova fresche allevate a terra",
-    brand: "MD",
+    brand: "APA",
     category: "latte-uova-yogurt",
     subcategory: "uova",
     format: "Confezione 10 uova",
@@ -115,7 +115,7 @@ export const products: Product[] = [
   product({
     id: "yogurt-frutti-bosco",
     name: "Yogurt intero all'albicocca",
-    brand: "Malga Paradiso",
+    brand: "APA",
     category: "latte-uova-yogurt",
     subcategory: "yogurt",
     format: "Vasetto 150 g",
@@ -197,7 +197,7 @@ export const products: Product[] = [
   product({
     id: "petto-pollo-500g",
     name: "Petto di pollo a fette",
-    brand: "MD",
+    brand: "Macelleria APA",
     category: "carne-pesce",
     subcategory: "carne",
     format: "Vaschetta, circa 500 g",
@@ -248,7 +248,7 @@ export const products: Product[] = [
   product({
     id: "cornetti-6pz",
     name: "Croissant all'albicocca",
-    brand: "La Dolce",
+    brand: "Forno APA",
     category: "pane-pasticceria",
     subcategory: "dolci",
     format: "Confezione 10 pz",
@@ -293,7 +293,7 @@ export const products: Product[] = [
   product({
     id: "spaghetti-500g",
     name: "Spaghetti",
-    brand: "Buona Spesa",
+    brand: "APA",
     category: "dispensa",
     subcategory: "pasta",
     format: "Pacco 500 g",
@@ -306,7 +306,7 @@ export const products: Product[] = [
   product({
     id: "passata-pomodoro-700g",
     name: "Passata di pomodoro",
-    brand: "Lettere dall'Italia",
+    brand: "APA Selezione",
     category: "dispensa",
     subcategory: "conserve",
     format: "Bottiglia 700 g",
@@ -319,7 +319,7 @@ export const products: Product[] = [
   product({
     id: "olio-evo-1l",
     name: "Olio extravergine di oliva",
-    brand: "Fra Ulivo",
+    brand: "APA Selezione",
     category: "dispensa",
     subcategory: "conserve",
     format: "Bottiglia 1 L",
@@ -347,7 +347,7 @@ export const products: Product[] = [
   product({
     id: "gelato-pistacchio-500g",
     name: "Gelato alla stracciatella",
-    brand: "Lettere dall'Italia",
+    brand: "APA Selezione",
     category: "surgelati",
     subcategory: "gelati",
     format: "Vaschetta 400 g",
@@ -376,7 +376,7 @@ export const products: Product[] = [
   product({
     id: "spremuta-arancia-1l",
     name: "Succo di arancia",
-    brand: "Viviland",
+    brand: "APA",
     category: "bevande",
     subcategory: "succhi-bibite",
     format: "Brick 1 L",
