@@ -1,9 +1,0 @@
-<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="48" fill="#fef3c7"/>
-            <rect x="18" y="56" width="84" height="36" rx="8" fill="#d97706" stroke="#0f291e" stroke-width="3"/>
-            <ellipse cx="38" cy="48" rx="13" ry="17" fill="#fed7aa" stroke="#0f291e" stroke-width="2.8"/>
-            <ellipse cx="60" cy="46" rx="13" ry="17" fill="#fdba74" stroke="#0f291e" stroke-width="2.8"/>
-            <ellipse cx="82" cy="48" rx="13" ry="17" fill="#fed7aa" stroke="#0f291e" stroke-width="2.8"/>
-            <rect x="28" y="64" width="64" height="18" rx="4" fill="#149b58" stroke="#0f291e" stroke-width="2"/>
-            <text x="60" y="77" text-anchor="middle" fill="#ffffff" font-family="Montserrat, sans-serif" font-weight="900" font-size="10">6 UOVA BIO</text>
-          </svg>

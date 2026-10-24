@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { FavoriteButton } from "@/components/product/favorite-button";
 import { PriceTag } from "@/components/product/price-tag";
+import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductGrid } from "@/components/product/product-grid";
 import { QuantityControl } from "@/components/product/quantity-control";
 import { getAllProducts, getCategory, getProduct, getProducts } from "@/lib/data/catalog";
@@ -65,17 +65,10 @@ async function ProductContent(props: Pick<PageProps<"/prodotti/[id]">, "params">
   return (
     <>
       <div className="grid gap-6 md:grid-cols-2 md:items-start md:gap-10">
-        <div className="flex aspect-square items-center justify-center overflow-hidden rounded-xl border border-line bg-paper p-8">
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={480}
-            height={480}
-            unoptimized
-            priority
-            className={`h-auto w-full max-w-sm object-contain ${product.inStock ? "" : "opacity-40"}`}
-          />
-        </div>
+        <ProductGallery
+          images={[{ src: product.image, label: product.name }, ...(product.gallery ?? [])]}
+          dimmed={!product.inStock}
+        />
 
         <div className="flex flex-col">
           <nav aria-label="Percorso" className="hidden text-sm text-ink-muted md:block">

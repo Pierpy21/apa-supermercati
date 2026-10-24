@@ -1,7 +1,0 @@
-<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="48" fill="#fcecf3"/>
-            <rect x="38" y="22" width="44" height="82" rx="14" fill="#ffffff" stroke="#0f291e" stroke-width="3"/>
-            <rect x="46" y="12" width="28" height="10" rx="3" fill="#da528a" stroke="#0f291e" stroke-width="2.5"/>
-            <rect x="39" y="48" width="42" height="30" fill="#fcecf3" stroke="#0f291e" stroke-width="2"/>
-            <text x="60" y="67" text-anchor="middle" fill="#9c2859" font-family="Montserrat, sans-serif" font-weight="900" font-size="11">KEFIR</text>
-          </svg>

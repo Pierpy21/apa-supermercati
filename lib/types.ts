@@ -32,6 +32,12 @@ export interface Category {
 /** personal = offerta personalizzata sullo storico. Nuovi tipi di offerta si aggiungono qui. */
 export type DealType = "personal";
 
+export interface ProductImage {
+  src: string;
+  /** Descrizione della foto, usata come testo alternativo (es. "Valori nutrizionali") */
+  label: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -49,6 +55,8 @@ export interface Product {
   /** Motivo dell'offerta personalizzata (es. "Lo compri spesso") */
   dealReason: string | null;
   image: string;
+  /** Foto aggiuntive mostrate nella scheda prodotto, dopo `image` */
+  gallery?: ProductImage[];
   description: string;
   tags: string[];
   inStock: boolean;

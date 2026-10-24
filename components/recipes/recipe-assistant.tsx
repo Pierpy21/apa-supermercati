@@ -18,7 +18,7 @@ interface Message {
 const SUGGESTIONS: { name: string; ingredients: string[] }[] = [
   { name: "Pasta alla Norma", ingredients: ["Spaghetti", "Passata di pomodoro", "Melanzane", "Ricotta salata", "Basilico"] },
   { name: "Caponata", ingredients: ["Melanzane", "Sedano", "Cipolla", "Olive verdi", "Capperi", "Passata di pomodoro"] },
-  { name: "Colazione siciliana", ingredients: ["Cornetti all'albicocca", "Spremuta di arance rosse", "Latte fresco"] },
+  { name: "Colazione siciliana", ingredients: ["Croissant all'albicocca", "Succo di arancia", "Latte fresco"] },
 ];
 
 const HIDDEN_ON = ["/checkout"];

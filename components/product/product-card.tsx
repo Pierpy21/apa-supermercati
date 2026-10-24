@@ -18,19 +18,19 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-line bg-surface transition-[border-color,box-shadow] hover:border-line-strong hover:shadow-sm">
-      <div className="relative flex aspect-square items-center justify-center bg-paper">
+      <div className="relative flex aspect-square items-center justify-center border-b border-line bg-white">
         <Link
           href={productHref}
           tabIndex={-1}
-          className="flex size-full items-center justify-center p-4"
+          className="flex size-full items-center justify-center p-3"
         >
           <Image
             src={product.image}
             alt={product.name}
-            width={120}
-            height={120}
+            width={300}
+            height={300}
             unoptimized
-            className={`size-30 object-contain ${product.inStock ? "" : "opacity-40"}`}
+            className={`size-full object-contain ${product.inStock ? "" : "opacity-40"}`}
           />
         </Link>
 

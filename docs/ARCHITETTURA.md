@@ -80,3 +80,11 @@ Obiettivo: sembrare il sito di una vera catena di supermercati siciliana, **non*
   con classe `category-art` e `group-hover:scale-105 group-hover:-rotate-1`.
 - Mobile first: header compatto con ricerca su riga propria sotto i 768px, gutter 16px, nessuno scroll orizzontale di pagina.
 - Accessibilità: `<button>` e `<Link>` veri, `aria-label` sui pulsanti icona, contrasto AA.
+
+## Immagini prodotto
+
+- `public/img/prodotti/foto-<id>.webp` (600×600, fondo bianco) è la foto principale; `foto-<id>-<n>.webp` sono le
+  foto aggiuntive (`Product.gallery`: valori nutrizionali, ingredienti, retro) mostrate nella galleria della scheda.
+- Provenienza, **solo per la demo**: packshot del catalogo MD su Everli e una foto fornita dal cliente (latte Parmalat);
+  Zymil, burro Brazzale e salmone da Open Food Facts (CC BY-SA 3.0, crediti nel footer). Prima di andare online vanno
+  sostituite con foto di cui APA ha i diritti (fornitori o shooting interno).

@@ -1,8 +1,0 @@
-<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="48" fill="#e6f7ee"/>
-            <path d="M42 18 H78 L82 32 L90 48 V98 C90 103 86 106 80 106 H40 C34 106 30 103 30 98 V48 L38 32 Z" fill="#ffffff" stroke="#0f291e" stroke-width="3" stroke-linejoin="round"/>
-            <rect x="31" y="56" width="58" height="30" fill="#149b58" stroke="#0f291e" stroke-width="2.5"/>
-            <text x="60" y="75" text-anchor="middle" fill="#ffffff" font-family="Montserrat, sans-serif" font-weight="900" font-size="11">LATTE APA</text>
-            <rect x="39" y="12" width="42" height="9" rx="3" fill="#0284c7" stroke="#0f291e" stroke-width="2.5"/>
-            <path d="M38 50 V96" stroke="#bae6fd" stroke-width="3" stroke-linecap="round"/>
-          </svg>

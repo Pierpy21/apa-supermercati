@@ -1,7 +1,0 @@
-<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="48" fill="#f3e8ff"/>
-            <polygon points="34,34 60,16 86,34" fill="#c084fc" stroke="#0f291e" stroke-width="3" stroke-linejoin="round"/>
-            <rect x="34" y="34" width="52" height="70" rx="4" fill="#ffffff" stroke="#0f291e" stroke-width="3"/>
-            <rect x="35" y="54" width="50" height="28" fill="#9333ea" stroke="#0f291e" stroke-width="2"/>
-            <text x="60" y="72" text-anchor="middle" fill="#ffffff" font-family="Montserrat, sans-serif" font-weight="900" font-size="9">0% LATTOSIO</text>
-          </svg>

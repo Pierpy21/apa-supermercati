@@ -7,7 +7,7 @@ import { useCart } from "@/components/cart/cart-provider";
 import { useToast } from "@/components/ui/toast-provider";
 import { PlusBadge } from "@/components/ui/plus-badge";
 
-const PLACEHOLDER = "2 latte\nuova\nyogurt greco\narance";
+const PLACEHOLDER = "2 latte\nuova\nskyr\nlimoni";
 
 /** Trasforma le righe non trovate in un testo leggibile per l'utente. */
 function joinNotFound(items: string[]): string {
