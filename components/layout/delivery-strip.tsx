@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getDeliverySlots } from "@/lib/data/customer";
-import { DELIVERY_FEE_EUR, FREE_DELIVERY_EUR, MIN_ORDER_EUR } from "@/lib/constants";
+import { DELIVERY_FEE_EUR, MIN_ORDER_EUR } from "@/lib/constants";
 import { formatEur } from "@/lib/format";
 
 /** Placeholder della striscia, stessa altezza minima del contenuto reale. */
@@ -28,8 +28,7 @@ export async function DeliveryStrip() {
           </span>
         </p>
         <p className="text-xs sm:text-sm">
-          Minimo d&apos;ordine {formatEur(MIN_ORDER_EUR)} · Consegna {formatEur(DELIVERY_FEE_EUR)}, gratis da{" "}
-          {formatEur(FREE_DELIVERY_EUR)}
+          Minimo d&apos;ordine {formatEur(MIN_ORDER_EUR)} di spesa, consegna esclusa · Consegna {formatEur(DELIVERY_FEE_EUR)}
         </p>
         <Link
           href="/checkout"

@@ -52,7 +52,7 @@ export function RecipeAssistant() {
     {
       id: 0,
       from: "assistant",
-      text: "Ciao! Dimmi cosa vuoi cucinare e preparo la lista degli ingredienti da aggiungere al carrello.",
+      text: "Ciao, sono Kuky! Dimmi cosa vuoi cucinare e preparo la lista degli ingredienti da aggiungere al carrello.",
     },
   ]);
   const nextId = useRef(1);
@@ -103,7 +103,7 @@ export function RecipeAssistant() {
       {open ? (
         <section
           role="dialog"
-          aria-label="Assistente ricette"
+          aria-label="Cucina con Kuky"
           className={`fixed right-4 z-40 flex max-h-[min(70vh,560px)] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-2xl bg-surface shadow-xl ring-1 ring-line ${panelOffset}`}
         >
           <header className="flex items-center gap-3 border-b border-line px-4 py-3">
@@ -112,7 +112,7 @@ export function RecipeAssistant() {
             </span>
             <div className="min-w-0 flex-1">
               <p className="flex items-center gap-2 font-display text-base font-semibold text-ink">
-                Ricette
+                Cucina con Kuky
                 <PlusBadge />
               </p>
               <p className="text-xs text-ink-muted">Dalla ricetta al carrello</p>
@@ -210,7 +210,7 @@ export function RecipeAssistant() {
         type="button"
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
-        aria-label={open ? "Chiudi l'assistente ricette" : "Apri l'assistente ricette"}
+        aria-label={open ? "Chiudi Cucina con Kuky" : "Apri Cucina con Kuky"}
         className={`fixed right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white shadow-lg transition-[bottom,background-color] hover:bg-brand-hover ${offset}`}
       >
         <ChefIcon className="h-7 w-7" />

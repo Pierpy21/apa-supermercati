@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FREE_DELIVERY_EUR, MIN_ORDER_EUR } from "@/lib/constants";
+import { DELIVERY_FEE_EUR, MIN_ORDER_EUR } from "@/lib/constants";
 import { formatEur } from "@/lib/format";
 import { useCart } from "./cart-provider";
 
@@ -72,26 +72,18 @@ export function CartBar() {
 
   if (!visible) return null;
 
-  const progress = Math.min(100, (totals.subtotal / FREE_DELIVERY_EUR) * 100);
-  const minimumMark = (MIN_ORDER_EUR / FREE_DELIVERY_EUR) * 100;
-  const freeDelivery = totals.missingToFreeDelivery === 0;
+  // Unica soglia: il minimo d'ordine
+  const progress = Math.min(100, (totals.subtotal / MIN_ORDER_EUR) * 100);
 
-  let title: React.ReactNode;
-  if (!totals.canCheckout) {
-    title = (
-      <>
-        Aggiungi <strong className="text-white">{formatEur(totals.missingToMinimum)}</strong> per ordinare
-      </>
-    );
-  } else if (!freeDelivery) {
-    title = (
-      <>
-        Ancora <strong className="text-white">{formatEur(totals.missingToFreeDelivery)}</strong> e la consegna è gratis
-      </>
-    );
-  } else {
-    title = <strong className="text-white">La consegna è gratuita</strong>;
-  }
+  const title: React.ReactNode = totals.canCheckout ? (
+    <>
+      <strong className="text-white">Minimo d&apos;ordine raggiunto</strong> · + {formatEur(DELIVERY_FEE_EUR)} di consegna
+    </>
+  ) : (
+    <>
+      Aggiungi <strong className="text-white">{formatEur(totals.missingToMinimum)}</strong> per ordinare
+    </>
+  );
 
   return (
     <>
@@ -101,7 +93,7 @@ export function CartBar() {
         <Wave />
         <div className="bg-brand text-white">
           <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 pt-1 pb-3.5 sm:gap-8 lg:px-8">
-            {/* Avanzamento verso le soglie */}
+            {/* Avanzamento verso il minimo d'ordine */}
             <div className="flex min-w-0 flex-1 items-center gap-4">
               <span className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white sm:flex">
                 <svg {...ICON_PROPS} className="h-5 w-5">
@@ -115,15 +107,14 @@ export function CartBar() {
                 <div
                   className="relative mt-3 mr-2 h-2 rounded-full bg-white/20"
                   role="progressbar"
-                  aria-label="Avanzamento verso la consegna gratuita"
+                  aria-label="Avanzamento verso il minimo d'ordine"
                   aria-valuemin={0}
-                  aria-valuemax={FREE_DELIVERY_EUR}
-                  aria-valuenow={Math.min(totals.subtotal, FREE_DELIVERY_EUR)}
-                  aria-valuetext={`${formatEur(totals.subtotal)} su ${formatEur(FREE_DELIVERY_EUR)}`}
+                  aria-valuemax={MIN_ORDER_EUR}
+                  aria-valuenow={Math.min(totals.subtotal, MIN_ORDER_EUR)}
+                  aria-valuetext={`${formatEur(totals.subtotal)} su ${formatEur(MIN_ORDER_EUR)}`}
                 >
                   <div className="h-full rounded-full bg-white transition-[width] duration-300" style={{ width: `${progress}%` }} />
-                  <Milestone at={minimumMark} reached={totals.canCheckout} label={`Minimo ${formatEur(MIN_ORDER_EUR)}`} align="center" />
-                  <Milestone at={100} reached={freeDelivery} label={`Consegna gratis ${formatEur(FREE_DELIVERY_EUR)}`} align="end" />
+                  <Milestone at={100} reached={totals.canCheckout} label={`Minimo d'ordine ${formatEur(MIN_ORDER_EUR)}`} align="end" />
                 </div>
               </div>
             </div>
@@ -133,7 +124,7 @@ export function CartBar() {
               <button
                 type="button"
                 onClick={openDrawer}
-                aria-label={`Apri il carrello: ${totals.itemCount} articoli, ${formatEur(totals.total)}`}
+                aria-label={`Apri il carrello: ${totals.itemCount} articoli, spesa ${formatEur(totals.subtotal)}`}
                 className="flex items-center gap-3 rounded-lg px-2 py-1.5 text-left transition-colors hover:bg-white/10"
               >
                 <span className="relative">
@@ -147,8 +138,9 @@ export function CartBar() {
                   </span>
                 </span>
                 <span className="hidden leading-tight sm:block">
-                  <span className="block text-xs text-white/70">Totale</span>
-                  <span className="block font-display text-[17px] font-bold text-white">{formatEur(totals.total)}</span>
+                  {/* La spesa senza consegna: è la cifra che conta per il minimo d'ordine */}
+                  <span className="block text-xs text-white/70">Spesa</span>
+                  <span className="block font-display text-[17px] font-bold text-white">{formatEur(totals.subtotal)}</span>
                 </span>
               </button>
 

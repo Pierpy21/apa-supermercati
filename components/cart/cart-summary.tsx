@@ -1,7 +1,7 @@
 "use client";
 
 import { useCart } from "@/components/cart/cart-provider";
-import { FREE_DELIVERY_EUR, MIN_ORDER_EUR } from "@/lib/constants";
+import { MIN_ORDER_EUR } from "@/lib/constants";
 import { formatEur } from "@/lib/format";
 
 interface Goal {
@@ -11,23 +11,18 @@ interface Goal {
 
 export function CartSummary() {
   const { totals } = useCart();
-  const { subtotal, savings, deliveryFee, total, missingToMinimum, missingToFreeDelivery } = totals;
+  const { subtotal, savings, deliveryFee, total, missingToMinimum } = totals;
 
-  // Una sola soglia alla volta: prima il minimo d'ordine, poi la consegna gratuita.
-  let goal: Goal | null = null;
-  if (missingToMinimum > 0) {
-    goal = {
-      label: `Mancano ${formatEur(missingToMinimum)} per il minimo d'ordine`,
-      percent: Math.min(100, (subtotal / MIN_ORDER_EUR) * 100),
-    };
-  } else if (missingToFreeDelivery > 0) {
-    goal = {
-      label: `Ancora ${formatEur(missingToFreeDelivery)} per la consegna gratuita`,
-      percent: Math.min(100, (subtotal / FREE_DELIVERY_EUR) * 100),
-    };
-  }
+  // Unica soglia: il minimo d'ordine
+  const goal: Goal | null =
+    missingToMinimum > 0
+      ? {
+          label: `Mancano ${formatEur(missingToMinimum)} di spesa per il minimo d'ordine (consegna esclusa)`,
+          percent: Math.min(100, (subtotal / MIN_ORDER_EUR) * 100),
+        }
+      : null;
 
-  const deliveryText = subtotal === 0 ? "—" : deliveryFee === 0 ? "Gratis" : formatEur(deliveryFee);
+  const deliveryText = subtotal === 0 ? "—" : formatEur(deliveryFee);
 
   return (
     <div className="flex flex-col gap-4">
@@ -44,9 +39,7 @@ export function CartSummary() {
         )}
         <div className="flex items-center justify-between gap-4">
           <dt className="text-ink-soft">Consegna</dt>
-          <dd className={deliveryFee === 0 && subtotal > 0 ? "font-medium text-brand" : "font-medium"}>
-            {deliveryText}
-          </dd>
+          <dd className="font-medium">{deliveryText}</dd>
         </div>
         <div className="mt-2 flex items-center justify-between gap-4 border-t border-line pt-3">
           <dt className="font-display text-base font-bold">Totale</dt>
@@ -72,7 +65,7 @@ export function CartSummary() {
           </div>
         </div>
       ) : (
-        <p className="text-sm font-medium text-brand">Consegna gratuita inclusa</p>
+        <p className="text-sm font-medium text-brand">Minimo d&apos;ordine raggiunto</p>
       )}
     </div>
   );

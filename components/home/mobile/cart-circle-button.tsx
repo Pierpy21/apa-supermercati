@@ -12,7 +12,7 @@ export function CartCircleButton() {
     <button
       type="button"
       onClick={openDrawer}
-      aria-label={`Apri il carrello: ${count} prodotti, ${formatEur(totals.total)}`}
+      aria-label={`Apri il carrello: ${count} prodotti, spesa ${formatEur(totals.subtotal)}`}
       className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-surface text-brand shadow-sm ring-1 ring-line transition-colors hover:bg-brand-tint"
     >
       <svg

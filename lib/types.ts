@@ -84,8 +84,6 @@ export interface CartTotals {
   total: number;
   /** Importo mancante per raggiungere il minimo d'ordine (0 se raggiunto) */
   missingToMinimum: number;
-  /** Importo mancante per la consegna gratuita (0 se raggiunta) */
-  missingToFreeDelivery: number;
   canCheckout: boolean;
 }
 

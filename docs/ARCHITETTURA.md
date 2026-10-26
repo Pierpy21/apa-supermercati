@@ -14,7 +14,7 @@ tutti i dati vengono da `lib/mock/*` attraverso il data layer `lib/data/*` (serv
 | `/cerca?q=` | Risultati ricerca |
 | `/offerte` | Offerte (oggi solo quelle personalizzate "Per te"; nuovi tipi si aggiungono in `DealType`) |
 | `/preferiti` | Prodotti salvati (stato client) |
-| `/carrello` | Carrello completo con riepilogo e soglie (minimo d'ordine, consegna gratuita) |
+| `/carrello` | Carrello completo con riepilogo e minimo d'ordine (consegna sempre € 2,90) |
 | `/checkout` | Indirizzo + copertura CAP, fascia di consegna, sostituzioni, pagamento, conferma |
 | `/ordini` | Storico ordini con "Riordina" |
 | `/ordini/[id]` | Dettaglio e tracking ordine (6 stati) |
@@ -58,7 +58,7 @@ i componenti che le usano vanno dentro `<Suspense>`.
 - `components/product/price-tag.tsx` — `<PriceTag product={Product} size?="sm" | "lg" />`
 - `components/catalog/category-grid.tsx` — `<CategoryGrid categories={Category[]} counts={Record<string, number>} />`
 - `components/cart/cart-summary.tsx` — `<CartSummary />` (client; totali, soglie, barra minimo d'ordine)
-- `components/cart/cart-bar.tsx` — `<CartBar />` (client; barra fissa in basso con bordo ondulato, avanzamento verso la consegna gratuita di € 35 con tacca del minimo d'ordine; nascosta a carrello vuoto e su /carrello e /checkout)
+- `components/cart/cart-bar.tsx` — `<CartBar />` (client; barra fissa in basso con bordo ondulato, avanzamento verso il minimo d'ordine di € 15; nascosta a carrello vuoto e su /carrello e /checkout)
 
 ## Linee guida grafiche
 

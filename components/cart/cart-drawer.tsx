@@ -17,7 +17,7 @@ export function CartButton() {
     <button
       type="button"
       onClick={openDrawer}
-      aria-label={`Apri il carrello: ${totals.itemCount} prodotti, ${formatEur(totals.total)}`}
+      aria-label={`Apri il carrello: ${totals.itemCount} prodotti, spesa ${formatEur(totals.subtotal)}`}
       className="relative flex h-10 shrink-0 items-center gap-2 rounded-lg border border-line-strong px-3 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
     >
       <svg
@@ -36,7 +36,7 @@ export function CartButton() {
         <circle cx="17" cy="19.5" r="1.25" />
       </svg>
       <span className="hidden sm:inline" aria-hidden="true">
-        {formatEur(totals.total)}
+        {formatEur(totals.subtotal)}
       </span>
       {totals.itemCount > 0 ? (
         <span

@@ -1,4 +1,4 @@
-import { DELIVERY_FEE_EUR, FREE_DELIVERY_EUR, MIN_ORDER_EUR } from "./constants";
+import { DELIVERY_FEE_EUR, MIN_ORDER_EUR } from "./constants";
 import type { CartLine, CartTotals, Product } from "./types";
 
 const round = (n: number) => Math.round(n * 100) / 100;
@@ -22,7 +22,8 @@ export function calculateTotals(lines: CartLine[], products: Product[]): CartTot
   }
 
   subtotal = round(subtotal);
-  const deliveryFee = subtotal === 0 || subtotal >= FREE_DELIVERY_EUR ? 0 : DELIVERY_FEE_EUR;
+  // Consegna a costo fisso: nessuna soglia di gratuità
+  const deliveryFee = subtotal === 0 ? 0 : DELIVERY_FEE_EUR;
 
   return {
     itemCount,
@@ -31,7 +32,6 @@ export function calculateTotals(lines: CartLine[], products: Product[]): CartTot
     deliveryFee,
     total: round(subtotal + deliveryFee),
     missingToMinimum: round(Math.max(0, MIN_ORDER_EUR - subtotal)),
-    missingToFreeDelivery: round(Math.max(0, FREE_DELIVERY_EUR - subtotal)),
     canCheckout: subtotal >= MIN_ORDER_EUR,
   };
 }
